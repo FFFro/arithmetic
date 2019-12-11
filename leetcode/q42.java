@@ -1,3 +1,5 @@
+package leetcode;
+
 /**
  * @program: arithmetic
  * @description: 阶乘后的零
