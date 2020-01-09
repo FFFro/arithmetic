@@ -37,6 +37,23 @@ public class q80 {
 
         return true;
     }
+
+    public boolean canConstruct1(String ransomNote, String magazine) {
+        if (ransomNote.length() > magazine.length()) {
+            return false;
+        }
+        int temp[] = new int[26];
+        for (char c : ransomNote.toCharArray()) {
+            int i = magazine.indexOf(c, temp[c - 'a']);
+            if (i == -1) {
+                return false;
+            }
+            temp[c - 'a'] = i + 1;
+        }
+
+        return true;
+    }
+
 }
 
 //    给定一个赎金信 (ransom) 字符串和一个杂志(magazine)字符串，判断第一个字符串ransom能不能由第二个字符串magazines里面的字符构成。如果可以构成，返回 true ；否则返回 false。
